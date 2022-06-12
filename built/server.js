@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: false }));
 app.post("/", async (req, res) => {
     const id = req.query.id || req.body.id;
     const username = req.query.username || req.body.username;
-    let check = send(req.query.id, username);
+    let check = send(id, username);
     if (check) {
         res.status(200).end();
     }
