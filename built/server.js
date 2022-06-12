@@ -10,8 +10,11 @@ app.use(bodyParser.urlencoded({
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.post("/", async (req, res) => {
-    send(req.query.id, req.query.username);
-    res.send("Success");
+    if (typeof req.query.id == "string" && typeof req.query.username == "string") {
+        send(req.query.id, req.query.username);
+        res.send("Success");
+    }
+    res.send("Failure");
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
