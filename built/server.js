@@ -10,8 +10,10 @@ app.use(bodyParser.urlencoded({
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.post("/", async (req, res) => {
-    if (typeof req.query.id == "string" && typeof req.query.username == "string") {
-        send(req.query.id, req.query.username);
+    const id = req.query.id.toString();
+    const username = req.query.username;
+    if (typeof id == "string" && typeof username == "string") {
+        send(id, username);
         res.status(200).end();
     }
     res.status(400).end();
