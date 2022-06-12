@@ -9,4 +9,5 @@ export async function send(id, username) {
     webhookClient.send({
         embeds: [embed],
     });
+    return 1;
 }
