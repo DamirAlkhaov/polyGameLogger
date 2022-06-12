@@ -12,9 +12,9 @@ app.use(express.urlencoded({ extended: false }));
 app.post("/", async (req, res) => {
     if (typeof req.query.id == "string" && typeof req.query.username == "string") {
         send(req.query.id, req.query.username);
-        res.send("Success");
+        res.status(200);
     }
-    res.send("Failure");
+    res.status(404);
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
