@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.post("/", async (req, res) => {
-    const id = req.query.id;
-    const username = req.query.username;
+    const id = req.query.id || req.body.id;
+    const username = req.query.username || req.body.username;
     let check = send(req.query.id, username);
     if (check) {
         res.status(200).end();
