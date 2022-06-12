@@ -14,7 +14,7 @@ app.post("/", async (req, res) => {
         send(req.query.id, req.query.username);
         res.status(200).end();
     }
-    res.status(404).end();
+    res.status(400).end();
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
