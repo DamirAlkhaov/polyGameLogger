@@ -1,11 +1,28 @@
 import { MessageEmbed, WebhookClient } from "discord.js";
-const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/985619536671813674/dOgmGb1qtOGdeui1rtGR8jI2sxB4ln_hmGseDqH4yjEb5dfuLevk3PaDVDRaKG_E7yhk' });
+import "dotenv/config";
+//setup the discord wehbook client
+const webhookClient = new WebhookClient({ url: process.env.DISCORD_URL });
+//log a message
+export async function log(id, username, msg) {
+    const embed = new MessageEmbed()
+        .setTitle('Someone sent message on the server!')
+        .setColor('#37ff77')
+        .addField('ID', id)
+        .addField('Username', username)
+        .addField('Message:', msg);
+    webhookClient.send({
+        embeds: [embed],
+    });
+    return 1;
+}
+//send a ping
 export async function send(id, username) {
     const embed = new MessageEmbed()
         .setTitle('Got a ping!')
         .setColor('#0099ff')
         .addField('ID', id)
-        .addField('Username', username);
+        .addField('Username', username)
+        .setDescription(username + " joined server.");
     webhookClient.send({
         embeds: [embed],
     });
