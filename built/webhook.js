@@ -16,7 +16,7 @@ export async function log(id, username, msg) {
     return 1;
 }
 //send a ping
-//#0099
+//#009
 //#ED4245
 export async function send(id, username, color, desc) {
     const embed = new MessageEmbed()
