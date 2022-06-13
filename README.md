@@ -32,7 +32,11 @@ After you did all that, you should write the following into the terminal:
 
 `$ git push heroku master`
 
+---
 
+## Polytoria .lua setup
+Open up the polytoria creator, add a script and put the contents of scripts/main.lua into that script.
+Be sure to change the URLs to the ones you need.
 
 
 
