@@ -17,11 +17,12 @@ app.post("/", async (req, res) => {
     const username = req.query.username;
     const color = req.query.color;
     const desc = req.query.desc;
+    console.log(req.header("PT-Game-ID"));
     const check = await send(id, username, color, desc);
     if (check) {
-        return res.status(200);
+        return res.status(200).end();
     }
-    return res.status(400);
+    return res.status(400).end();
 });
 //whenever the user messages this should be used.
 app.post("/msg", async (req, res) => {
@@ -30,9 +31,9 @@ app.post("/msg", async (req, res) => {
     const msg = req.query.msg;
     let check = await log(id, username, msg);
     if (check) {
-        return res.status(200);
+        res.status(200).send("Success").end();
     }
-    return res.status(400);
+    res.status(400).send("Failure").end();
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
