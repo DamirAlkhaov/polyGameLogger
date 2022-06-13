@@ -1,4 +1,4 @@
-[![Contributors][contributors-shield]][contributors-url]
+[![Contributors][contributors-shield]](contributors-url)
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
@@ -46,11 +46,11 @@ After you did all that, you should write the following into the terminal:
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/DamirAlkhaov/polyGameLogger.svg?style=for-the-badge
 [contributors-url]: https://github.com/DamirAlkhaov/polyGameLogger/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/DamirAlkhaov/polyGameLogger.svg?style=for-the-badge
 [forks-url]: https://github.com/DamirAlkhaov/polyGameLogger/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/DamirAlkhaov/polyGameLogger.svg?style=for-the-badge
 [stars-url]: https://github.com/DamirAlkhaov/polyGameLogger/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/DamirAlkhaov/polyGameLogger.svg?style=for-the-badge
 [issues-url]: https://github.com/DamirAlkhaov/polyGameLogger/issues 
