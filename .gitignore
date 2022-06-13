@@ -1,5 +1,2 @@
-built/
-
-node_modules/
-
-.env
+src/
+images/
