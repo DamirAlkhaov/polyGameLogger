@@ -40,11 +40,11 @@ app.post("/msg", async (req, res) => {
 
   let check = await log(id, username, msg);
   if (check) {
-    return res.status(200).send("Success");
+    return res.status(200).end();
   }
   
   
-  return res.status(400).send("Failure");
+  return res.status(400).end();
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
