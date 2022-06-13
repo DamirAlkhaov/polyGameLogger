@@ -22,13 +22,13 @@ app.post("/", async (req, res) => {
   const desc = req.query.desc;
 
 
-  let check = await send(id, username, color, desc);
+  const check = await send(id, username, color, desc);
   if (check) {
-    res.status(200).end();
+    return res.status(200);
   }
   
   
-  res.status(400).end();
+  return res.status(400);
 });
 
 //whenever the user messages this should be used.
@@ -40,11 +40,11 @@ app.post("/msg", async (req, res) => {
 
   let check = await log(id, username, msg);
   if (check) {
-    res.status(200).end();
+    return res.status(200);
   }
   
   
-  res.status(400).end();
+  return res.status(400);
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
