@@ -1,7 +1,7 @@
 --main url
-URL     =   "https://polytoria-datastore-system.herokuapp.com?id="
+URL     =   "URL?id="
 --logging url
-LOG_URL =   "https://polytoria-datastore-system.herokuapp.com/msg?id="
+LOG_URL =   "URL?id="
 
 Chat:BroadcastMessage("This game uses Damir's Chat Logger v0.0.3")
 
