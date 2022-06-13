@@ -1,6 +1,7 @@
 import express from "express";
 import bodyParser from "body-parser";
 import { log, send } from "./webhook.js";
+import { auth } from "./auth.js";
 const port = 3000;
 const app = express();
 //setup body parser
@@ -17,7 +18,7 @@ app.post("/", async (req, res) => {
     const username = req.query.username;
     const color = req.query.color;
     const desc = req.query.desc;
-    console.log(req.header("PT-Game-ID"));
+    auth(req, res);
     const check = await send(id, username, color, desc);
     if (check) {
         return res.status(200).end();
@@ -29,6 +30,7 @@ app.post("/msg", async (req, res) => {
     const id = req.query.id;
     const username = req.query.username;
     const msg = req.query.msg;
+    auth(req, res);
     let check = await log(id, username, msg);
     if (check) {
         res.status(200).send("Success").end();
