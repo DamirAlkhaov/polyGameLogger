@@ -17,12 +17,16 @@ app.use(express.urlencoded({extended: false}));
 
 //whenever a user joins the server, use this.
 app.post("/", async (req, res) => {
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const id = req.query.id;
   const username = req.query.username;
   const color = req.query.color;
   const desc = req.query.desc;
   
-  auth(req, res);
+  const isReqGood = await auth(req.header("PT-Game-ID"), ip)
+  if(!isReqGood){
+    return res.status(400).send("Failure").end();
+  }
 
   const check = await send(id, username, color, desc);
   if (check) {
@@ -34,20 +38,24 @@ app.post("/", async (req, res) => {
 });
 
 //whenever the user messages this should be used.
-app.post("/msg", async (req, res) => {
+app.post("/msg", async (req, res) => {1
+  const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
   const id = req.query.id;
   const username = req.query.username;
   const msg = req.query.msg;
 
-  auth(req, res);
-
-  let check = await log(id, username, msg);
+  const isReqGood = await auth(req.header("PT-Game-ID"), ip)
+  if(!isReqGood){
+    return res.status(400).send("Failure").end();
+  }
+  
+  const check = await log(id, username, msg);
   if (check) {
-    res.status(200).send("Success").end();
+    return res.status(200).send("Success").end();
   }
   
   
-  res.status(400).send("Failure").end();
+  return res.status(400).send("Failure").end();
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
