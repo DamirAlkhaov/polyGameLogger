@@ -7,6 +7,7 @@
 <img src="images/polytoria.png" width="100">
 <h1>polyGameLogger</h1>
 This code can be used to log activity on yours Polytoria Games.
+
 `current version: 0.0.4`
 
 ---
