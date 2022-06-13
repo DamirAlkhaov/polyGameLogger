@@ -1,4 +1,6 @@
-src/
-scripts/
-tsconfig.json
-
+#src/
+#scripts/
+#tsconfig.json
+built/
+node_modules/
+.env
