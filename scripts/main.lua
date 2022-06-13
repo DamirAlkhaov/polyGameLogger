@@ -3,6 +3,8 @@ URL     =   "https://polytoria-datastore-system.herokuapp.com?id="
 --logging url
 LOG_URL =   "https://polytoria-datastore-system.herokuapp.com/msg?id="
 
+Chat:BroadcastMessage("This game uses Damir's Chat Logger v0.0.3")
+
 --main player joined/left func
 function send(player, color, desc)
     Http:Post(URL..player.UserID.."&username="..player.Name.."&color="..color.."&desc="..desc, "" , function (data, error, errmsg)
