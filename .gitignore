@@ -1,5 +1,10 @@
-built/
+#built/
 
-node_modules/
+#node_modules/
 
-.env
+#.env
+
+src/
+scripts/
+images/
+tsconfig.json
