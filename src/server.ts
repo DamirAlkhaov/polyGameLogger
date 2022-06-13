@@ -28,16 +28,16 @@ app.post("/", async (req, res) => {
   
   const isReqGood = await auth(req.header("PT-Game-ID"), ip)
   if(!isReqGood && !debugging){
-    return res.status(400).send("Failure").end();
+    return res.status(400).send("Failure");
   }
 
   const check = await send(id, username, color, desc);
   if (check) {
-    return res.status(200).end();
+    return res.status(200);
   }
   
   
-  return res.status(400).end();
+  return res.status(400);
 });
 
 //whenever the user messages this should be used.
@@ -49,16 +49,16 @@ app.post("/msg", async (req, res) => {1
 
   const isReqGood = await auth(req.header("PT-Game-ID"), ip)
   if(!isReqGood && !debugging){
-    return res.status(400).send("Failure").end();
+    return res.status(400).send("Failure");
   }
   
   const check = await log(id, username, msg);
   if (check) {
-    return res.status(200).send("Success").end();
+    return res.status(200).send("Success");
   }
   
   
-  return res.status(400).send("Failure").end();
+  return res.status(400).send("Failure");
 });
 // @ts-ignore
 app.listen(process.env.PORT || port, () => console.log("Running on port " + port));
