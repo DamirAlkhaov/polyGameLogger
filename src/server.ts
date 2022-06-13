@@ -5,7 +5,7 @@ import { auth } from "./auth.js";
 const port = 3000;
 const app = express();
 
-//make this true if you are debugging in a local server.
+//make this true if you are debugging in a local server
 const debugging = false;
 
 //setup body parser
