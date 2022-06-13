@@ -16,13 +16,15 @@ export async function log(id, username, msg) {
     return 1;
 }
 //send a ping
-export async function send(id, username) {
+//#0099ff
+//#f54545
+export async function send(id, username, color, desc) {
     const embed = new MessageEmbed()
         .setTitle('Got a ping!')
-        .setColor('#0099ff')
+        .setColor(color)
         .addField('ID', id)
         .addField('Username', username)
-        .setDescription(username + " joined server.");
+        .setDescription(desc);
     webhookClient.send({
         embeds: [embed],
     });

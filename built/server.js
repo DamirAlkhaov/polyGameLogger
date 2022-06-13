@@ -15,7 +15,9 @@ app.use(express.urlencoded({ extended: false }));
 app.post("/", async (req, res) => {
     const id = req.query.id;
     const username = req.query.username;
-    let check = await send(id, username);
+    const color = req.query.color;
+    const desc = req.query.desc;
+    let check = await send(id, username, color, desc);
     if (check) {
         res.status(200).end();
     }
