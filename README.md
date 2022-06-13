@@ -22,14 +22,18 @@ Thirdly, you'll have to create a heroku account and set up an app and follow the
 
 After you did all that, you should write the following into the terminal:
 
+Install packages
 `$ npm i`
 
+Compile typescript, created js files will be in 'built' folder
 `$ tsc`
 
+Do your ordinary git stuff
 `$ git add .`
 
 `$ git commit -m "message"`
 
+Push files to heroku
 `$ git push heroku master`
 
 ---
