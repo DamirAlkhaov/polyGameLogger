@@ -1,4 +1,3 @@
-/src/
-/scripts/
-/images/
-.md
+/built/
+.env
+node_modules/
