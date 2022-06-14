@@ -19,7 +19,7 @@ app.post("/", async (req, res) => {
     if (req.query.key != process.env.SECRET_KEY) {
         return res.status(400).send("Failure : API Key isn't correct");
     }
-    const ip = req.connection.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const id = req.query.id;
     const username = req.query.username;
     const color = req.query.color;
@@ -39,7 +39,7 @@ app.post("/msg", async (req, res) => {
     if (req.query.key != process.env.SECRET_KEY) {
         return res.status(400).send("Failure : API Key isn't correct");
     }
-    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     const id = req.query.id;
     const username = req.query.username;
     const msg = req.query.msg;
