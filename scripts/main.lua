@@ -5,7 +5,7 @@ LOG_URL     =       "URL?id="
 --API key
 SECRET_KEY  =       "putKeyHere"
 
-Chat:BroadcastMessage("This game uses Damir's Chat Logger v0.1.0")
+Chat:BroadcastMessage("This game uses Damir's Chat Logger v0.1.1")
 
 function send(player, color, desc)
     Http:Post(URL..player.UserID.."&username="..player.Name.."&color="..color.."&desc="..desc.."&key="..SECRET_KEY, "" , function (data, error, errmsg)
