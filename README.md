@@ -14,7 +14,7 @@ This code can be used to log activity on yours Polytoria Games.
 
 ## Basic Setup
 
-First of all, you need to create a .env file with the value DISCORD_URL, which will be your discord webhook url.
+First of all, you need to create a .env file with the value DISCORD_URL, which will be your discord webhook url and the value SECRET_KEY, which will be your custom api key(aka password).
 
 Secondly, you'll need to install typescript on your machine.
 
