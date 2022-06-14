@@ -8,7 +8,7 @@
 <h1>polyGameLogger</h1>
 This code can be used to log activity on yours Polytoria Games.
 
-`current version: 0.1.0`
+`current version: 0.1.1`
 
 ---
 
